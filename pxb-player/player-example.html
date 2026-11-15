@@ -1,0 +1,119 @@
+<!--
+  PixelBanner (.pxb) & PixelImage (.pxi) Web Player - Interactive Demo Page
+  Demonstrates static .pxi rendering, looping .pxb playback, and hover/focus state swapping.
+
+  @file example/player-example.html
+  @author BjornEriksson (https://github.com)
+  @version 0.1.0-beta
+  @license MIT
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pxb-player.js — Native .pxi &amp; .pxb UI Demo</title>
+  <style>
+    body {
+      background-color: #1e293b;
+      color: #f8fafc;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .demo-panel {
+      background-color: #d4d0c8;
+      color: #111827;
+      border-top: 2px solid #ffffff;
+      border-left: 2px solid #ffffff;
+      border-right: 2px solid #404040;
+      border-bottom: 2px solid #404040;
+      padding: 20px 24px;
+      width: 440px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
+    h1 {
+      font-size: 15px;
+      margin: 0 0 6px 0;
+    }
+    p {
+      font-size: 12px;
+      color: #374151;
+      margin: 0 0 16px 0;
+      line-height: 1.4;
+    }
+    .demo-row {
+      background-color: #e4e1da;
+      border: 1px solid #808080;
+      padding: 12px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .demo-label {
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .demo-sub {
+      font-size: 11px;
+      color: #4b5563;
+      display: block;
+      margin-top: 2px;
+    }
+    .pxb-link-btn {
+      display: inline-block;
+      line-height: 0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .pxb-link-btn:focus-visible {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+  </style>
+  <!-- Load standalone player from project root -->
+  <script src="../pxb-player.js" defer></script>
+</head>
+<body>
+  <div class="demo-panel">
+    <h1>pxb-player.js — Native Binary UI Test</h1>
+    <p>Move your mouse over the button below to swap seamlessly from the static <code>.pxi</code> file to the animated <code>.pxb</code> sparkle loop.</p>
+
+    <!-- 1. Interactive Hover Button (.pxi idle -> .pxb hover) -->
+    <div class="demo-row">
+      <div>
+        <span class="demo-label">Interactive Menu Button</span>
+        <span class="demo-sub">Hover or Tab-focus to trigger animation</span>
+      </div>
+      <a href="#artwork" class="pxb-link-btn" aria-label="Artwork Gallery">
+        <canvas
+          data-pxi="btn-artwork-idle.pxi"
+          data-pxb-hover="btn-artwork-hover.pxb">
+        </canvas>
+      </a>
+    </div>
+
+    <!-- 2. Static .pxi Display -->
+    <div class="demo-row">
+      <div>
+        <span class="demo-label">Static .pxi Image</span>
+        <span class="demo-sub">Rendered directly from binary header</span>
+      </div>
+      <canvas data-pxi="btn-artwork-idle.pxi"></canvas>
+    </div>
+
+    <!-- 3. Continuous .pxb Loop -->
+    <div class="demo-row" style="margin-bottom: 0;">
+      <div>
+        <span class="demo-label">Looping .pxb Animation</span>
+        <span class="demo-sub">6 frames @ 95 ms, auto-pauses off-screen</span>
+      </div>
+      <canvas data-pxb="btn-artwork-hover.pxb"></canvas>
+    </div>
+  </div>
+</body>
+</html>
