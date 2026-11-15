@@ -9,9 +9,7 @@
 
 ## Live Preview (`example/movie.mp4`)
 
-https://github.com
-
-*(Tip: After uploading `example/movie.mp4` to your GitHub repository, you can also drag-and-drop the MP4 file directly into the GitHub README editor to auto-generate the embedded video link.)*
+https://github.com/user-attachments/assets/a7d86bf3-6b40-44b5-95ee-0dea7d27112e
 
 ---
 
